@@ -11,16 +11,16 @@ import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({title, customFunc, icon, color, dotColor}) => (
-    <TooltipCompnent content = {title} position='BottomCenter'>
-        <button></button>
-    </TooltipCompnent>
+    <TooltipComponent content = {title} position='BottomCenter'>
+        <button type='button' onClick={customFunc}></button>
+    </TooltipComponent>
 )
 
 const Navbar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   return (
-    <NavButton title='Menu' customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlinemenu />}/> 
+    <NavButton title='Menu' customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />}/> 
   ) 
 }
 
